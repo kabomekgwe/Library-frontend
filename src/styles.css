@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background-color: red;
+  margin: 20px 0 ;
+}
+
+.myContainer {
+  min-height: 450px;
+  background-color: white;
+  margin: 10px 0;
+  padding: 20px;
+}
+
