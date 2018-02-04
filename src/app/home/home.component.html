@@ -1,0 +1,23 @@
+
+  <app-navbar></app-navbar>
+
+
+  <div class=" myContainer  ">
+    <form class="form-inline my-2 my-lg-0" [formGroup]="searchForm">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" formControlName="searchInput">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <div class="row ">
+      <div class="  col-8 ">
+
+          <app-book-list [books]="listBooks"></app-book-list>
+
+
+      </div>
+     <app-book-to-return></app-book-to-return>
+    </div>
+
+
+
+  </div>
+

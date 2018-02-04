@@ -1,0 +1,15 @@
+*{
+  color: black;
+}
+.navBack {
+  background-color: rgb(245, 100, 17);;
+}
+.nav .nav-item {
+  margin: 2px;
+
+}
+
+.nav .nav-item .nav-link {
+  background-color: rgba(286, 130, 18,10);
+
+}
