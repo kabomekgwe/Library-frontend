@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-content">
+
+          <form [formGroup]="loginUserForm" (ngSubmit)="onSubmit()" novalidate>
+            <h1>SignUp</h1>
+            <div class="form-group" >
+              <label for="email">Email address</label>
+              <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email">
+
+            </div>
+            <div class="form-group" >
+              <label for="email">Password</label>
+              <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password">
+
+            </div>
+
+
+            <div class="form-group">
+              <button type="submit" class="btn  btn-primary btn-block" >Signin</button>
+            </div>
+
+            <div class="form-group">
+              <a type="submit" routerLink="/user/register" class="btn btn-secondary btn-block">Signup</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

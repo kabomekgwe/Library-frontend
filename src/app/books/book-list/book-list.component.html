@@ -1,13 +1,13 @@
 
     <div class=" " *ngFor="let book of books" style="padding:8px">
 
-        <div class="card" >
+        <div class="card"  *ngIf="book">
             <div class=" card-body">
-                <p> <u> {{ book?.title }} </u> </p>
+                <p> <u> {{ book.title }} </u> </p>
 
-           <small> {{ book?.description }}</small>
+           <small> {{ book.description }}</small>
 
-           <a [routerLink]="['book',book?._id]"  class="float-right btn " >more... </a>
+           <a [routerLink]="['book',book.uuid]"  class="float-right btn " >more... </a>
 
 
               </div>

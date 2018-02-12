@@ -12,4 +12,7 @@ export class ReturnBookComponent implements OnInit {
   ngOnInit() {
   }
 
+  returnBook() {
+    console.log('book returned');
+  }
 }

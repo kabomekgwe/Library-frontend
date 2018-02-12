@@ -10,21 +10,34 @@
               <li class="nav-item ">
                 <a class="nav-link" routerLink="/">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/return">Return Book</a>
+              <li class="nav-item" *ngIf="authService.loggedIn()">
+                <a class="nav-link" routerLink="/return" >Return Book</a>
               </li>
             </ul>
 
 
 
           <ul class="nav    ">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-
+              <li class="nav-item"  *ngIf="!authService.loggedIn()">
+                  <a class="nav-link" routerLink="/user/register" >SignUp</a>
+                </li>
+                <li class="nav-item" *ngIf="!authService.loggedIn()">
+                    <a class="nav-link"  routerLink="/user/login"  >Signin</a>
+                  </li>
+                  <li class="" style="padding:7px; font-size:20px; text-decoration:underline" *ngIf="authService.loggedIn()">
+                   <span>Hello {{ name }}</span>
+                  </li>
+              <li class="nav-item dropdown" *ngIf="authService.loggedIn()">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Settings
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Account</a>
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" (click)="logout()">Logout</a>
+                  </div>
+                </li>
 
             </ul>
 

@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-content">
+
+        <form [formGroup]="registerUserForm" (ngSubmit)="onSubmit()" novalidate>
+          <h1>SignUp</h1>
+
+          <div class="form-group" [ngClass]="{'has-error': (registerUserForm.get('name').errors && registerUserForm.get('name').dirty) , 'has-success': !registerUserForm.get('name').errors}">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Name">
+
+            <ul class="text-danger">
+              <li *ngIf="registerUserForm.get('name').dirty  && registerUserForm.get('name').errors?.required">name Field is Required</li>
+              <li *ngIf="registerUserForm.get('name').errors?.minlength ">Name must be min 3 characters</li>
+              <li *ngIf="registerUserForm.get('name').errors?.maxlength ">Name must max 35 characters</li>
+              <li *ngIf="registerUserForm.get('name').errors?.pattern ">Name must only have alphabets</li>
+
+            </ul>
+
+          </div>
+          <div class="form-group" [ngClass]="{'has-error': (registerUserForm.get('surname').errors && registerUserForm.get('surname').dirty) , 'has-success': !registerUserForm.get('surname').errors}">
+            <label for="surname">Surname</label>
+            <input type="text" formControlName="surname" class="form-control" id="surname" placeholder="Surname">
+            <ul class="text-danger">
+              <li *ngIf="registerUserForm.get('surname').dirty  && registerUserForm.get('surname').errors?.required">surname Field is Required</li>
+              <li *ngIf="registerUserForm.get('surname').errors?.minlength ">surname must be min 3 characters</li>
+              <li *ngIf="registerUserForm.get('surname').errors?.maxlength ">surname must max 35 characters</li>
+              <li *ngIf="registerUserForm.get('surname').errors?.pattern ">surname must only have alphabets</li>
+
+            </ul>
+          </div>
+          <div class="form-group" [ngClass]="{'has-error': (registerUserForm.get('email').errors && registerUserForm.get('email').dirty) , 'has-success': !registerUserForm.get('email').errors}">
+            <label for="email">Email address</label>
+            <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email">
+            <ul class="text-danger">
+                <li *ngIf="registerUserForm.get('email').dirty  && registerUserForm.get('email').errors?.required">Email Field is Required</li>
+                <li *ngIf="registerUserForm.get('email').dirty && registerUserForm.get('email').errors?.email ">inccorrect email</li>
+                <li *ngIf="error"> {{error }}</li>
+              </ul>
+          </div>
+          <div class="form-group" [ngClass]="{'has-error': (registerUserForm.get('password').errors && registerUserForm.get('password').dirty) , 'has-success': !registerUserForm.get('password').errors}">
+            <label for="email">Password</label>
+            <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password">
+            <ul class="text-danger">
+                <li *ngIf="registerUserForm.get('password').dirty  && registerUserForm.get('password').errors?.required">Password Field is Required</li>
+                <li *ngIf="registerUserForm.get('password').errors?.pattern ">Valid characters: Alphabets, Numbers and '!$&' characters.</li>
+
+              </ul>
+          </div>
+          <div class="form-group" >
+            <label for="email">Re-Enter Password</label>
+            <input type="password" formControlName="reenterpassword"[compareEqual]="registerUserForm.get('password').value" class="form-control" id="reenterpassword" placeholder="Re-Enter Password">
+
+            <span *ngIf="registerUserForm.get('reenterpassword').errors && registerUserForm.get('reenterpassword').errors.compareEqual">
+                Passwords do not match
+            </span>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn  btn-primary btn-block" [disabled]="registerUserForm.invalid">SignUp</button>
+          </div>
+
+          <div class="form-group">
+            <a type="submit" routerLink="/user/login" class="btn btn-secondary btn-block"> Signin</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
