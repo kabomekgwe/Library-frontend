@@ -25,19 +25,20 @@
             <th scope="col">Actions</th>
           </tr>
         </thead>
+
         <tbody>
-          <tr *ngFor="let book of Books; let i = index">
-            <th scope="row">{{i}}</th>
-            <td>{{ book.title }}</td>
-            <td> {{book.author }} </td>
-            <td> {{book.created_on}}</td>
+          <tr *ngFor="let book of books; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{ book.title }} </td>
+            <td>{{ book.author }} </td>
+            <td>{{ book.created_on | date:'medium'}} </td>
             <td><button class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Return</button></td>
           </tr>
 
         </tbody>
       </table>
     </div>
-    <div class="card-footer bg-transparent border-success">Footer</div>
+    <div class="card-footer bg-transparent border-success"><h3>Total Books Borrowed ({{books?.length}})</h3></div>
   </div>
 </div>
 
@@ -55,7 +56,7 @@
           </button>
         </div>
         <div class="modal-body">
-          are you sure you want to return 'Easy Javascript?'
+          are you sure you want to return {{books[0]?.title | json}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>

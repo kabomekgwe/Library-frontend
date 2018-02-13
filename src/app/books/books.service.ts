@@ -27,7 +27,7 @@ createAuthenticationHeaders() {
   }
 
   getBook(id): Observable<any> {
-    return this.httpClient.get(`${this._url}/borrow/${id}`);
+    return this.httpClient.get(`${this._url}/books/${id}`);
   }
 
   postBorrowBook(bookid) {
