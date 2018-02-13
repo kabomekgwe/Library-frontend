@@ -38,8 +38,8 @@ createAuthenticationHeaders() {
     return this.httpClient.post(`${this._url}/books`, borrow);
   }
 
-  getBooksToReturn(id) {
+  getBooksToReturn(id, answer) {
 
-    return this.httpClient.get<any[]>(`${this._url}/borrow/${id}`);
+    return this.httpClient.get<any[]>(`${this._url}/borrow/${id}/${answer}`);
   }
 }

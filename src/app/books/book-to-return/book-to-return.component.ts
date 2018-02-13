@@ -13,7 +13,7 @@ export class BookToReturnComponent implements OnInit {
 
   ngOnInit() {
     const id = localStorage.getItem('token');
-    this._booksService.getBooksToReturn(id).subscribe( (res) => {
+    this._booksService.getBooksToReturn(id, 'no').subscribe( (res) => {
       this.books = res;
 
     }, (err) => console.error(err));
