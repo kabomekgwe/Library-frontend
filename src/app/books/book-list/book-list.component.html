@@ -1,19 +1,11 @@
-
-    <div class=" " *ngFor="let book of books" style="padding:8px">
-
-        <div class="card"  *ngIf="book">
-            <div class=" card-body">
-                <p> <u> {{ book.title }} </u> </p>
-
-           <small> {{ book.description }}</small>
-
-           <a [routerLink]="['book',book.uuid]"  class="float-right btn " >more... </a>
-
-
-              </div>
-
-        </div>
-
-      </div>
-
-
+<div class=" " *ngFor="let book of books" style="padding:8px">
+  <div class="card" *ngIf="book">
+    <div class=" card-body">
+      <p>
+        <u> {{ book.title }} </u>
+      </p>
+      <small> {{ book.description }}</small>
+      <a [routerLink]="['book',book.uuid]" class="float-right btn ">more... </a>
+    </div>
+  </div>
+</div>

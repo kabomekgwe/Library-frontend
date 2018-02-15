@@ -1,21 +1,16 @@
-
-    <h2 class="header">Books to return</h2>
-  <table class="table table-sm  table-dark"  *ngIf="books.length; else noBooks" >
-      <thead>
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">Author</th>
-        </tr>
-      </thead>
-      <tbody >
-       <tr *ngFor="let book of books " >
-
-         <td> {{book.title}} </td>
-         <td> {{book.author}} </td>
-       </tr>
-      </tbody>
-    </table>
-    <ng-template #noBooks>There are no Books</ng-template>
-
-
-
+<h2 class="header">Books to return</h2>
+<table class="table table-sm  table-dark" *ngIf="books.length; else noBooks">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books ">
+      <td> {{book.title}} </td>
+      <td> {{book.author}} </td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #noBooks>There are no Books</ng-template>

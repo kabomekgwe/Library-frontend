@@ -32,14 +32,22 @@ createAuthenticationHeaders() {
 
   postBorrowBook(bookid) {
     const borrow = {
-      userid: localStorage.getItem('token'),
+      userid: localStorage.getItem('id'),
       bookid: bookid
     };
-    return this.httpClient.post(`${this._url}/books`, borrow);
+    return this.httpClient.post(`${this._url}/borrow`, borrow);
   }
 
   getBooksToReturn(id, answer) {
 
     return this.httpClient.get<any[]>(`${this._url}/borrow/${id}/${answer}`);
+  }
+
+  updateBorrowedBooks(userid, bookid) {
+    const data = {
+       userid: userid,
+       bookid: bookid
+    };
+    return this.httpClient.patch(`${this._url}/borrow`, data);
   }
 }

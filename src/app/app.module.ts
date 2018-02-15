@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -9,21 +11,23 @@ import { BooksService } from './books/books.service';
 import { DatePipe } from '@angular/common';
 import { UserService } from './user/user.service';
 import { AuthService } from './services/auth.service';
-
-
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AccountComponent,
 
 
 
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     RoutingModule,
+
 
   ],
   providers: [

@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   loadToken() {
-    this.authToken = localStorage.getItem('token');
+    this.authToken = localStorage.getItem('id');
   }
 
   login(user) {
@@ -41,10 +41,10 @@ export class AuthService {
     localStorage.clear();
   }
 
-  storeUserData(token, user) {
-    localStorage.setItem('token', token);
+  storeUserData(id, user) {
+    localStorage.setItem('token', id);
     localStorage.setItem('user', user);
-    this.authToken = token;
+    this.authToken = id;
     this.user = user;
   }
   private decodeToken() {

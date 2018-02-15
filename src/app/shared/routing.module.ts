@@ -13,6 +13,8 @@ import { ReturnBookComponent } from '../books/return-book/return-book.component'
 import { LoginComponent } from '../user/login/login.component';
 import { RegisterComponent } from '../user/register/register.component';
 import { CompareValidatorModule } from 'angular-compare-validator';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
+
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full' },
   {path: '', component: HomeComponent },
@@ -28,7 +30,6 @@ const routes: Routes = [
       {path: 'register', component: RegisterComponent}
     ]
   }
-
 ];
 
 @NgModule({
@@ -38,6 +39,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    ToastModule.forRoot(),
     CompareValidatorModule
   ],
   declarations: [
@@ -49,7 +51,6 @@ const routes: Routes = [
     ReturnBookComponent,
     LoginComponent,
     RegisterComponent,
-
   ],
   exports: [
     RouterModule,
