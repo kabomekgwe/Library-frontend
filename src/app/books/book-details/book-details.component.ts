@@ -38,6 +38,8 @@ export class BookDetailsComponent implements OnInit {
           this.toastr.error('You have already borrowed this book, choose another one.', 'Cannot borrow Book');
         }
       });
+
+
   }
 
 }

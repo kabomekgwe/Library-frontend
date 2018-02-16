@@ -11,13 +11,13 @@ import { BooksService } from './books/books.service';
 import { DatePipe } from '@angular/common';
 import { UserService } from './user/user.service';
 import { AuthService } from './services/auth.service';
-import { AccountComponent } from './account/account.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccountComponent,
+
 
 
 

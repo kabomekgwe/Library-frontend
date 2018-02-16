@@ -14,6 +14,7 @@ import { LoginComponent } from '../user/login/login.component';
 import { RegisterComponent } from '../user/register/register.component';
 import { CompareValidatorModule } from 'angular-compare-validator';
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import { AccountComponent } from '../account/account.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full' },
@@ -29,7 +30,8 @@ const routes: Routes = [
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent}
     ]
-  }
+  },
+  {path: 'account', component: AccountComponent}
 ];
 
 @NgModule({
@@ -51,6 +53,7 @@ const routes: Routes = [
     ReturnBookComponent,
     LoginComponent,
     RegisterComponent,
+    AccountComponent
   ],
   exports: [
     RouterModule,

@@ -16,20 +16,20 @@ export class ReturnBookComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = localStorage.getItem('id');
+    const id = localStorage.getItem('token');
     this._booksService.getBooksToReturn(id, 'no').subscribe((res) => {
       this.books = res;
     }, (err) => console.error(err));
   }
 
   returnBook(bookid) {
-    const userid = localStorage.getItem('id');
+    const userid = localStorage.getItem('token');
 
     this._booksService.updateBorrowedBooks(userid, bookid).subscribe((res) => {
       this.toastr.success('Book has  been returned', 'Success!');
       this.router.navigateByUrl('/return', { skipLocationChange: false });
 
-      const id = localStorage.getItem('id');
+      const id = localStorage.getItem('token');
       this._booksService.getBooksToReturn(id, 'no').subscribe((resp) => {
         this.books = resp;
       }, (err) => console.error(err));

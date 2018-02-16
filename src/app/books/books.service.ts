@@ -30,10 +30,10 @@ createAuthenticationHeaders() {
     return this.httpClient.get(`${this._url}/books/${id}`);
   }
 
-  postBorrowBook(bookid) {
+  postBorrowBook(book) {
     const borrow = {
-      userid: localStorage.getItem('id'),
-      bookid: bookid
+      userid: localStorage.getItem('token'),
+      bookid: book
     };
     return this.httpClient.post(`${this._url}/borrow`, borrow);
   }
@@ -49,5 +49,10 @@ createAuthenticationHeaders() {
        bookid: bookid
     };
     return this.httpClient.patch(`${this._url}/borrow`, data);
+  }
+
+  getAllBooksByUser() {
+    const userid = localStorage.getItem('token');
+    return this.httpClient.get<any[]>(`${this._url}/borrow/${userid}`);
   }
 }
