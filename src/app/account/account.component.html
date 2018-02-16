@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<div class="card myCard" >
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Account</li>
+        </ol>
+      </nav>
+</div>
+
+<div class="myContainer">
+  <div class="card ">
+    <h5 class="card-header">
+      Books
+    </h5>
+    <div class="card-body">
+      <table class="table tabl-sm ">
+        <thead class="thead-dark ">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">Website link</th>
+            <th scope="col">Returned</th>
+            <th scope="col">Date Borrowed</th>
+            <th scope="col">Date Returned</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books; let i = index" [ngClass]="{red: book.returned == 'No'}" >
+            <th scope="row"> {{i+1}} </th>
+            <td> {{book.title}} </td>
+            <td> {{book.author}} </td>
+            <td> {{book.publisher}} </td>
+           <td> <a href="{{book.website}}">Website</a>  </td>
+           <td > {{book.returned}} </td>
+            <td> {{book.created_on | date:'medium'}} </td>
+            <td> {{book.updated_on | date:'medium'}} </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
